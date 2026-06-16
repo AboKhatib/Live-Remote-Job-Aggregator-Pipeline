@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Remote Jobs Feed</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">DevFeed</div>
+
+  <input id="searchInput" placeholder="Search jobs, skills, companies..." />
+
+  <div class="status">
+    <span class="dot"></span>
+    <span id="liveLabel">Live</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <aside class="filters">
+    <button class="chip active" data-filter="all">All</button>
+    <button class="chip" data-filter="js">JavaScript</button>
+    <button class="chip" data-filter="python">Python</button>
+    <button class="chip" data-filter="devops">DevOps</button>
+    <button class="chip" data-filter="ai">AI / ML</button>
+    <button class="chip" data-filter="backend">Backend</button>
+  </aside>
+
+  <main>
+    <div class="meta">
+      <h2 id="feedTitle">Loading jobs...</h2>
+    </div>
+
+    <div id="jobList" class="list"></div>
+  </main>
+
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

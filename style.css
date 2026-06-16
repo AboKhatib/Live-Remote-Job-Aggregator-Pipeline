@@ -1,0 +1,139 @@
+:root{
+  --bg:#0b0f14;
+  --panel:#0f1620;
+  --border:rgba(255,255,255,0.06);
+  --text:#e8eef6;
+  --muted:#8b98a5;
+  --accent:#7c5cff;
+  --green:#22c55e;
+
+  --radius:12px;
+  --mono: "JetBrains Mono", monospace;
+  --sans: "Inter", system-ui;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--sans);
+}
+
+/* TOPBAR */
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 20px;
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  backdrop-filter:blur(10px);
+  background:rgba(11,15,20,0.7);
+}
+
+.brand{
+  font-weight:700;
+  letter-spacing:0.5px;
+}
+
+#searchInput{
+  width:40%;
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:var(--panel);
+  color:var(--text);
+  outline:none;
+}
+
+/* STATUS */
+.status{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-family:var(--mono);
+  font-size:12px;
+  color:var(--muted);
+}
+
+.dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--green);
+  box-shadow:0 0 10px var(--green);
+}
+
+/* LAYOUT */
+.container{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:24px;
+  max-width:1100px;
+  margin:30px auto;
+  padding:0 20px;
+}
+
+/* FILTERS */
+.filters{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.chip{
+  padding:8px 10px;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background:transparent;
+  color:var(--muted);
+  cursor:pointer;
+  text-align:left;
+}
+
+.chip.active{
+  background:rgba(124,92,255,0.15);
+  color:var(--text);
+  border-color:rgba(124,92,255,0.4);
+}
+
+/* LIST */
+.list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.card{
+  padding:16px;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  background:rgba(255,255,255,0.02);
+  transition:0.2s ease;
+}
+
+.card:hover{
+  transform:translateY(-2px);
+  border-color:rgba(124,92,255,0.3);
+}
+
+.title{
+  font-weight:600;
+  margin-bottom:6px;
+}
+
+.meta{
+  font-size:12px;
+  color:var(--muted);
+  font-family:var(--mono);
+}
+
+.desc{
+  margin-top:8px;
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.5;
+}
